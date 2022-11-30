@@ -35,7 +35,7 @@ def gather_aircraft_data():
 
 def make_capacity_table(flight_df, aircraft_df, save_to_csv):
 
-    # Create the cargo capacity df from the existing flight df
+    # Create the cargo capacity df from the existing flight df (only keep one event per flight)
     cargo_capacity_df = flight_df[["callsign", "destination_icao", "equipment", "flight", "flight_id",
                                    "operator", "origin_icao", "registration"]].drop_duplicates(subset=["flight_id"])
 
@@ -75,4 +75,5 @@ def route_daily_capacity(origin_icao, destination_icao):
 
 
 if __name__ == "main":
-    route_daily_capacity("KMEM", "PHNL")
+    result = route_daily_capacity("KMEM", "PHNL")
+    print(result)
