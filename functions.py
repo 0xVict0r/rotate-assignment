@@ -74,6 +74,6 @@ def route_daily_capacity(origin_icao, destination_icao):
     return {"Origin Airport": origin_icao, "Destination Airport": destination_icao, "Daily Capacity Weight [kg]": route_daily_weight, "Daily Capacity Volume [m3]": route_daily_volume}
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     result = route_daily_capacity("KMEM", "PHNL")
     print(result)
