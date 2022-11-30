@@ -1,5 +1,7 @@
 # Rotate Data Challenge
 
+To use this app, one can either go to this [website](https://0xvict0r-rotate-assignment-rotate-data-challenge-2h6uhy.streamlit.app/) and follow instructions, or use the integrated API as explained below.
+
 In order to run the API, one should run `uvicorn api:app --reload` from the terminal.
 
 Then, navigate to `http://127.0.0.1:8000/get_daily_route_capacity/origin_icao&destination_icao` and input the origin and destination in ICAO format (eg. "KMEM" and "PHNL")

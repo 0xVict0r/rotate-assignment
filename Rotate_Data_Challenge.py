@@ -11,6 +11,8 @@ def main():
 
     st.title("Rotate Data Challenge")
 
+    st.write("Input an origin and destination airport using the ICAO format. Then click 'Run' and the app will then give you the expected daily volume and weight of cargo that one can expect to transit, alongside the current average number of daily flights on this route.")
+
     st.markdown(
         """<style> div.stButton > button:first-child { width: 100% ; } </style>""", unsafe_allow_html=True)
 
