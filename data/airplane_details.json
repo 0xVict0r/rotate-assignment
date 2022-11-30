@@ -16,6 +16,7 @@
 {"code_iata":"773","code_icao":"B773","full_name":"Boeing B777-300","category":"B777","average_speed_mph":562.0,"volume":121.752,"payload":64225.952}
 {"code_iata":"77E","code_icao":"B772","full_name":"Boeing B777-200ER","category":"B777","average_speed_mph":562.0,"volume":86.2752,"payload":54299.404}
 {"code_iata":"290","code_icao":"E290","full_name":"Embraer 190 E2","category":"E190-E2","average_speed_mph":541.0,"volume":40.88496,"payload":13446.32}
+{"code_iata":"E90","code_icao":"E190","full_name":"Embraer 190","category":"E190","average_speed_mph":515.0, "payload":13000}
 {"code_iata":"M11","code_icao":"MD11","full_name":"Boeing MD-11","category":"MD-11","average_speed_mph":522.0,"volume":490.95696,"payload":52037.2584}
 {"code_iata":"753","code_icao":"B753","full_name":"Boeing B757-300","category":"B757","average_speed_mph":530.0,"volume":20.13696,"payload":30574.5588}
 {"code_iata":"345","code_icao":"A345","full_name":"Airbus A340-500","category":"A340","average_speed_mph":541.0,"volume":79.0248,"payload":54012.681}
@@ -32,6 +33,7 @@
 {"code_iata":"342","code_icao":"A342","full_name":"Airbus A340-200","category":"A340","average_speed_mph":541.0,"volume":72.02064,"payload":50324.83}
 {"code_iata":"M90","code_icao":"MD90","full_name":"Boeing MD90-30","category":"MD90","average_speed_mph":509.0,"volume":10.31472,"payload":18758.6051}
 {"code_iata":"295","code_icao":"E295","full_name":"Embraer 195 E2","category":"E195-E2","average_speed_mph":541.0,"volume":44.5056,"payload":15918.07}
+{"code_iata":"L2J","code_icao":"E75L","full_name":"Embraer 170-200","category":"E170","average_speed_mph":541.0, "payload":10000}
 {"code_iata":"763","code_icao":"B763","full_name":"Boeing B767-300ER","category":"B767","average_speed_mph":535.0,"volume":62.99184,"payload":45374.4091}
 {"code_iata":"ARJ","code_icao":"RJ70","full_name":"Avro RJ70 / RJ85 / RJ100","category":"RJ","average_speed_mph":368.0,"volume":4.52352,"payload":9326.4071}
 {"code_iata":"732","code_icao":"B732","full_name":"Boeing B737-200ADV","category":"B737","average_speed_mph":462.0,"volume":6.01008,"payload":14530.9239}
@@ -96,5 +98,10 @@
 {"code_iata":"T2F","code_icao":"T204","full_name":"Tupolev Tu-204 Freighter","category":"Tu-204F","average_speed_mph":500.0,"payload":12457.62}
 {"code_iata":"WWP","code_icao":"WW24","full_name":"Israel Aerospace Industries 1124 Westwind","category":"1124 Westwind","average_speed_mph":420.0,"payload":1977.4}
 {"code_iata":"CRF","code_icao":"CRJ1","full_name":"Bombardier CRJ100PF","category":"CRJ100PF","average_speed_mph":420.0,"payload":6278.245}
+{"code_iata":"CR9","code_icao":"CRJ9","full_name":"Bombardier CRJ900","category":"CRJ900","average_speed_mph":515,"payload":12000}
+{"code_iata":"CR2","code_icao":"CRJ2","full_name":"Bombardier CRJ200","category":"CRJ200","average_speed_mph":480,"payload":6100}
+{"code_iata":"CR7","code_icao":"CRJ7","full_name":"Bombardier CRJ700","category":"CRJ700","average_speed_mph":544,"payload":8200}
 {"code_iata":"D1X","code_icao":"DC10","full_name":"Douglas D10-10F","category":"D10F","average_speed_mph":547.0,"payload":62336.5463}
 {"code_iata":"DC8","code_icao":"DC8","full_name":"Douglas D8-55F","category":"D8","average_speed_mph":435.0,"payload":41604.496}
+{"code_iata":"ATR","code_icao":"AT76","full_name":"ATR 72-600","category":"ATR","average_speed_mph":320,"payload":7400}
+{"code_iata":"DH4","code_icao":"DH8D","full_name":"Dash 8 Q400","category":"DH8","average_speed_mph":415,"payload":8500}

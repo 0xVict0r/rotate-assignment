@@ -39,7 +39,10 @@ def make_capacity_table(flight_df, aircraft_df, save_to_csv):
     cargo_capacity_df = flight_df[["callsign", "destination_icao", "equipment", "flight", "flight_id",
                                    "operator", "origin_icao", "registration"]].drop_duplicates(subset=["flight_id"])
 
-    # Remove all the flights where the aircraft is not in aircraft_df (a majority of helicopters)
+    # print(cargo_capacity_df[~cargo_capacity_df["equipment"].isin(
+    #     aircraft_df["code_icao"])]["equipment"].value_counts().head(20))
+
+    # Remove all the flights where the aircraft is not in aircraft_df (a majority of helicopters, GA and jets which are generally useless for cargo)
     cargo_capacity_df = cargo_capacity_df[cargo_capacity_df["equipment"].isin(
         aircraft_df["code_icao"])].reset_index(drop=True)
 
@@ -70,10 +73,11 @@ def route_daily_capacity(origin_icao, destination_icao):
     # Calculate the average daily weight and volume on that route (/7 because the initial data is an aggregate of 7 days of flights)
     route_daily_weight = route_df["capacity_weight"].sum() / 7
     route_daily_volume = route_df["capacity_volume"].sum() / 7
+    daily_flights = len(route_df["capacity_volume"]) / 7
 
-    return {"Origin Airport": origin_icao, "Destination Airport": destination_icao, "Daily Capacity Weight [kg]": route_daily_weight, "Daily Capacity Volume [m3]": route_daily_volume}
+    return {"Origin Airport": origin_icao, "Destination Airport": destination_icao, "Daily Capacity Weight [kg]": route_daily_weight, "Daily Capacity Volume [m3]": route_daily_volume, "Daily Flights": daily_flights}
 
 
 if __name__ == "__main__":
-    result = route_daily_capacity("KMEM", "PHNL")
-    print(result)
+    result = make_capacity_table(
+        gather_flight_data(), gather_aircraft_data(), True)
