@@ -20,9 +20,9 @@ def main():
         col1, col2 = st.columns(2)
 
         origin_input = col1.text_input(
-            "Input origin here :", placeholder="eg. KMEM").upper()
+            "Input origin airport here :", placeholder="eg. KMEM").upper()
         destination_input = col2.text_input(
-            "Input destination here :", placeholder="eg. PHNL").upper()
+            "Input destination airport here :", placeholder="eg. PHNL").upper()
 
         button = st.form_submit_button("Run")
 
