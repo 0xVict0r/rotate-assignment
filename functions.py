@@ -39,6 +39,11 @@ def make_capacity_table(flight_df, aircraft_df, save_to_csv):
     cargo_capacity_df = flight_df[["callsign", "destination_icao", "equipment", "flight", "flight_id",
                                    "operator", "origin_icao", "registration"]].drop_duplicates(subset=["flight_id"])
 
+    # As the data is a subset of the real world one, multiply everything by how much is missing
+    subset_flights_per_week = len(flight_df["flight_id"].value_counts())
+    full_set_flights_per_week = 200000 * 7
+    flight_multiplier = full_set_flights_per_week / subset_flights_per_week
+
     # print(cargo_capacity_df[~cargo_capacity_df["equipment"].isin(
     #     aircraft_df["code_icao"])]["equipment"].value_counts().head(20))
 
@@ -50,9 +55,9 @@ def make_capacity_table(flight_df, aircraft_df, save_to_csv):
     for i in range(len(cargo_capacity_df)):
         aircraft_icao = cargo_capacity_df.at[i, "equipment"]
         cargo_capacity_df.at[i, "capacity_weight"] = aircraft_df[aircraft_df["code_icao"]
-                                                                 == aircraft_icao]["payload"].values[0]
+                                                                 == aircraft_icao]["payload"].values[0] * flight_multiplier
         cargo_capacity_df.at[i, "capacity_volume"] = aircraft_df[aircraft_df["code_icao"]
-                                                                 == aircraft_icao]["volume"].values[0]
+                                                                 == aircraft_icao]["volume"].values[0] * flight_multiplier
 
     # If true, save the data to a new csv, useful to save the data and use it instead of running this everytime
     if save_to_csv:
@@ -79,5 +84,9 @@ def route_daily_capacity(origin_icao, destination_icao):
 
 
 if __name__ == "__main__":
-    result = make_capacity_table(
-        gather_flight_data(), gather_aircraft_data(), True)
+    flight_df = gather_flight_data()
+    airctaft_df = gather_aircraft_data()
+
+    total_flights = len(flight_df["flight_id"].value_counts())
+    no_flights_per_week = 200000 * 7
+    flight_multiplier = no_flights_per_week / total_flights

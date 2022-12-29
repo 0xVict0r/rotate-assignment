@@ -38,6 +38,8 @@ def main():
             col3_bis.metric("Daily Flights [-]",
                             np.round(result["Daily Flights"], 2))
 
+    # st.dataframe(gather_flight_data())
+
 
 if __name__ == "__main__":
     main()
